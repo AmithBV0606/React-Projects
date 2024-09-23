@@ -8,6 +8,7 @@ export const ThemeContext = createContext({
 
 export const ThemeProvider = ThemeContext.Provider
 
+// Custom Hook
 export default function useTheme(){
     return useContext(ThemeContext)
 }
