@@ -9,6 +9,7 @@ function App() {
   //useRef hook
   const passwordRef = useRef(null)
 
+  // Generates Password : Optimized using useCallBack Hook
   const passwordGenerator = useCallback(() => {
     let pass = ""
     let str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
@@ -19,21 +20,24 @@ function App() {
     for (let i = 0; i < length; i++) {
       let strIndex = Math.floor(Math.random() * str.length + 1)
       pass += str.charAt(strIndex)
-      
     }
 
     setPassword(pass)
 
   }, [length, number, character, setPassword])
 
-  const copyPasswordToClipboard = useCallback(() => {
-    passwordRef.current?.select();
-    window.navigator.clipboard.writeText(password)
-  }, [password])
-
+  // Used to display the Generateed password
   useEffect(() => {
     passwordGenerator()
   }, [length, number, character, passwordGenerator])
+
+  // Used to copy the generated password
+  const copyPasswordToClipboard = useCallback(() => {
+    passwordRef.current?.select(); // To select the text in the input field.
+    // If the input field is empty, we're using ?
+    window.navigator.clipboard.writeText(password) // To get the access to the clipboard so that we can copy the selected text into the clipboard
+  }, [password])
+  
   return (
     
     <div className="w-full max-w-md mx-auto shadow-md rounded-lg px-4 py-3 my-[20%] bg-gray-800 text-orange-500 space-y-6" >
@@ -43,11 +47,11 @@ function App() {
       <div className="flex shadow rounded-lg overflow-hidden mb-4">
 
         <input
-            type="text"
-            value={password}
-            className="outline-none w-full py-1 px-3"
-            placeholder="Password"
-            readOnly
+              type="text"
+              value={password}
+              className="outline-none w-full py-1 px-3"
+              placeholder="Password"
+              readOnly
             ref={passwordRef}
         />
 
@@ -81,7 +85,7 @@ function App() {
             defaultChecked={number}
             id="numberInput"
             onChange={() => {
-              setNumber((prev) => !prev);
+              setNumber((number) => !number); // Can also use prev
             }}
           />
 
@@ -96,14 +100,16 @@ function App() {
               defaultChecked={character}
               id="characterInput"
               onChange={() => {
-                  setCharacter((prev) => !prev )
+                  setCharacter((character) => !character )
               }}
           />
 
           <label htmlFor="characterInput">Characters</label>
-       </div>
-    </div>
-</div>
+
+        </div>
+
+      </div>
+  </div>
     
   )
 }
