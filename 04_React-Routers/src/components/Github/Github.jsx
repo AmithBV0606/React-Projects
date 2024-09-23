@@ -4,6 +4,7 @@ import { useLoaderData } from 'react-router-dom'
 function Github() {
 
     const data = useLoaderData()
+
     // const [data, setData] = useState([]);
 
     // useEffect( () => {
@@ -30,7 +31,7 @@ function Github() {
 
 export default Github
 
-// Optimized way : 
+// Optimized way : Should be wriiten in different folder
 export const githubInfoloader = async () => {
     const response = await fetch('https://api.github.com/users/AmithBV0606')
     return response.json()

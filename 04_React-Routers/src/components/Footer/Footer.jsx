@@ -22,12 +22,12 @@ function Footer() {
               </h2>
               <ul className="text-gray-500 font-medium">
                 <li className="mb-4">
-                  <Link to="/" className="hover:underline">
+                  <Link to="/" className="hover:underline hover:text-orange-600">
                     Home
                   </Link>
                 </li>
                 <li>
-                  <Link to="/about" className="hover:underline">
+                  <Link to="/about" className="hover:underline hover:text-orange-600">
                     About
                   </Link>
                 </li>
@@ -41,7 +41,7 @@ function Footer() {
                 <li className="mb-4">
                   <a
                     href="https://github.com/hiteshchoudhary"
-                    className="hover:underline"
+                    className="hover:underline hover:text-orange-600"
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -49,7 +49,7 @@ function Footer() {
                   </a>
                 </li>
                 <li>
-                  <Link to="/" className="hover:underline">
+                  <Link to="/" className="hover:underline hover:text-orange-600">
                     Discord
                   </Link>
                 </li>
@@ -61,12 +61,12 @@ function Footer() {
               </h2>
               <ul className="text-gray-500 font-medium">
                 <li className="mb-4">
-                  <Link to="#" className="hover:underline">
+                  <Link to="#" className="hover:underline hover:text-orange-600">
                     Privacy Policy
                   </Link>
                 </li>
                 <li>
-                  <Link to="#" className="hover:underline">
+                  <Link to="#" className="hover:underline hover:text-orange-600">
                     Terms &amp; Conditions
                   </Link>
                 </li>

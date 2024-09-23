@@ -8,7 +8,7 @@ function User() {
     <>
       <div className="bg-gray-300 p-4 space-y-4">
         <div>
-        User : {userid}   
+          User : {userid}   
         </div>
 
         <div className="ml-60">
