@@ -1,18 +1,20 @@
 import React, { useState } from "react";
 
 function App() {
-  const [color, setColor] = useState("violet");
+  const [color, setColor] = useState("grey");
+  console.log(color)
 
   return (
-    <div className="w-full h-screen duration-200" style={{ background: color }}>
-      <div className="fixed flex flex-wrap justify-center bottom-28 inset-x-24">
-        <div className="flex flex-wrap justify-center gap-8 shadow-lg bg-white p-3 rounded-3xl">
+    // <div className="w-full h-screen duration-200" style={{ background: color }}>
+      <div className={`w-full h-screen duration-200 bg-${color}-500`}>
+      <div className="fixed flex flex-wrap justify-center bottom-28 inset-x-24 border border-red-500 ">
+        <div className="flex flex-wrap justify-center gap-8 shadow-lg bg-white p-3 rounded-3xl border border-black">
           <button
             onClick={() => setColor("red")}
-            className="outline-none px-6 py-1 rounded-full text-white shadow-lg"
-            style={{ background: "red" }}
+            className="outline-none px-6 py-1 rounded-full text-white shadow-lg bg-red-500"
+            // style={{ background: "red" }}
           >
-            Red
+            Red 
           </button>
 
           <button
