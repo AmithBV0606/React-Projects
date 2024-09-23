@@ -6,7 +6,7 @@ function Input({
   onAmountChange,
   onCurrencyChange,
   currencyOptions = [],
-  selectCurrency = "usd",
+  selectCurrency,
   amountDisable = false,
   currencyDisable = false,
   className = "",
@@ -39,13 +39,13 @@ function Input({
 
         <select
           className="rounded-lg p-1 bg-gray-200 cursor-pointer outline-none"
-          value={selectCurrency}
           onChange={(e) => onCurrencyChange && onCurrencyChange(e.target.value)}
-          disabled={currencyDisable}>
+          disabled={currencyDisable}
+          >
 
-          {currencyOptions.map((currency) => (
-            <option key={currency} value={currency}>
-              {currency}
+          {currencyOptions.map((items) => (
+            <option key={items} value={items} selected={selectCurrency}>
+              {items}
             </option>
           ))}
 
